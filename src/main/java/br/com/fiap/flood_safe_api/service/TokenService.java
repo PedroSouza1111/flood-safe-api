@@ -12,13 +12,12 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 
 import br.com.fiap.flood_safe_api.dto.Token;
 import br.com.fiap.flood_safe_api.model.Usuario;
+import br.com.fiap.flood_safe_api.model.enums.UsuarioRole;
 
 @Service
 public class TokenService {
 
-    // É uma boa prática injetar o segredo e a validade a partir do
-    // application.properties
-    @Value("${jwt.secret:um-segredo-muito-forte-para-o-floodsafe}")
+    @Value("${jwt.secret}")
     private String jwtSecret;
 
     @Value("${jwt.expiration.hours:2}")
@@ -47,6 +46,7 @@ public class TokenService {
         return Usuario.builder()
                 .id(Long.valueOf(decodedJwt.getSubject()))
                 .email(decodedJwt.getClaim("email").asString())
+                .role(UsuarioRole.valueOf(decodedJwt.getClaim("role").asString()))
                 .build();
     }
 }
