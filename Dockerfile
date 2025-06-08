@@ -40,7 +40,8 @@ USER appuser
 # Renomeamos para 'app.jar' para simplificar o comando de execução.
 # IMPORTANTE: Verifique se o nome do seu JAR corresponde ao padrão abaixo.
 # Se o nome for diferente, ajuste o caminho aqui.
-COPY --from=build /app/target/flood-safe-api-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
+
 
 # Expõe a porta em que a aplicação Spring Boot roda (padrão 8080).
 # A Railway detecta isso e direciona o tráfego para esta porta.
