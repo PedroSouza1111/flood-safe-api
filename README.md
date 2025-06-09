@@ -106,11 +106,12 @@ Value: Bearer+seu token
 
 ##TABELA EXEMPLO-COMUNIDADES
 
-### CREATE - Criar comunidade
+
 
 POST http://ip da vm:8080/auth/login
 Content-Type: application/json
 
+```
 {
   "nomeComunidade": "areiao",
   "regiao": "oeste",
@@ -120,19 +121,14 @@ Content-Type: application/json
 }
 ```
 
-### READ - Listar todas as comunidades
-### READ - Buscar comunidade por ID
-```
+
 GET http://ip da vm:8080/comunidades/1  (ou sem o id para listar todas)
 
-```
 
-### UPDATE - Atualizar comunidade
-```
 PUT http://ip da vm:8080/comunidades/1
-
 Content-Type: application/json
 
+```
 {
   "nomeComunidade": "rocinha",
   "regiao": "leste",
@@ -141,13 +137,10 @@ Content-Type: application/json
   "nivelRiscoHistorico": "BAIXO"
 }
 ```
-```
 
-### DELETE - Deletar comunidade
-```
 DELETE http://ip da vm:8080/comunidades/1
 
-```
+
 
 
 ## 📽 Vídeo demonstrativo
