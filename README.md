@@ -21,7 +21,7 @@ exit
 
 ---
 
-## 📁 Clonar o projeto
+## 📁 Clonar o projeto (ATENÇÂO- CLONAR A BRANCH CERTA)
 
 ```bash
 git clone --branch oracle-devops --single-branch https://github.com/PedroSouza1111/flood-safe-api.git
@@ -54,7 +54,7 @@ docker build -t flood-safe-api .
 
 ---
 
-## 🚀 Executar a API
+## 🚀 Executar o container da API
 
 ```bash
 docker run -d \
@@ -62,13 +62,14 @@ docker run -d \
   -p 8080:8080 \
   flood-safe-api
 ```
+###SEMPRE USE DOCKER PS PARA VERIFICAR O STATUS DOS CONTAINERES
 
 ---
 
 ## 🌐 Testando a API via Swagger UI
 
 1. Acesse o Swagger UI no navegador:  
-   👉 [http://52.179.251.200:8080/swagger-ui/index.html](http://52.179.251.200:8080/swagger-ui/index.html)
+   👉 [http://IP da sua vm:8080/swagger-ui/index.html]
 
 2. Encontre o endpoint de login (ex: `/auth/login`) e clique em **"Try it out"**
 
